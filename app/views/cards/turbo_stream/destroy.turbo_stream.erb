@@ -1,0 +1,7 @@
+<%= turbo_stream.remove(@card) %>
+
+<% if @board.cards.count.zero?  %>
+  <%=  turbo_stream.append("workspace_#{@workspace.id}_board_#{@board.id}_cards") do %>
+    <%= render partial: 'cards/no_cards', locals: { board_id: @board.id} %>
+  <% end %>
+<% end %>

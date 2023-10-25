@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CreateCards < ActiveRecord::Migration[7.1]
   def change
     create_table :cards do |t|
@@ -8,6 +10,6 @@ class CreateCards < ActiveRecord::Migration[7.1]
       t.timestamps
     end
 
-    add_index :cards, [:title, :board_id], unique: true, name: 'index_cards_on_title_and_board_id'
+    add_index :cards, %i[title board_id], unique: true, name: 'index_cards_on_title_and_board_id'
   end
 end

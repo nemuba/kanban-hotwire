@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 class EnableExtensionPgTrgm < ActiveRecord::Migration[7.1]
   def up
-    enable_extension "pg_trgm"
+    enable_extension 'pg_trgm'
   end
 
   def down
-    disable_extension "pg_trgm"
+    disable_extension 'pg_trgm'
   end
 end

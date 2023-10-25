@@ -1,31 +1,9 @@
 @import 'bootstrap/scss/bootstrap';
 @import 'bootstrap-icons/font/bootstrap-icons';
 
-.kamban {
-  .card {
-    .card-header {
-      background-color: #fff;
-      border-bottom: 1px solid #dee2e6;
-    }
-    .card-body {
-      padding: 0;
-    }
-  }
-  .card-columns {
-    column-count: 3;
-  }
-  .card-columns .card {
-    display: inline-block;
-    width: 100%;
-  }
-  .card-columns .card .card-body {
-    padding: 0.5rem;
-  }
-  .card-columns .card .card-body .card-title {
-    font-size: 1.2rem;
-    font-weight: bold;
-  }
-  .card-columns .card .card-body .card-text {
-    font-size: 1rem;
-  }
+.dragging {
+  opacity: 0.5;
+  border: 2px dashed #000;
+  background-color: gray;
+  color: #000;
 }

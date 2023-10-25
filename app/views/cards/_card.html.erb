@@ -1,0 +1,36 @@
+<li 
+  draggable="true"
+  class="list-group-item p-0"
+  data-action="dragstart->drag#dragstart dragend->drag#dragend dragover->drag#dragover"
+  data-card-id="<%= card.id %>"
+  id="<%= dom_id(card) %>"
+>
+  <div class="card">
+    <div class="header d-flex justify-content-between p-1">
+      <span><%= time_ago_in_words(card.created_at) %> ago</span>
+
+      <div class="dropdown">
+        <button class="btn btn-sm btn-default dropdown-toggle" type="button" id="dropdownMenuCard" data-bs-toggle="dropdown" aria-expanded="false">
+          <i class="bi bi-three-dots"></i>
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuCard">
+          <li class="dropdown-item">
+            <%= link_to 'Edit',
+                        edit_workspace_board_card_path(@workspace, card.board, card),
+                        class: 'dropdown-item',
+                        data: { turbo_frame: 'remote_modal' } %>
+          </li>
+          <li class="dropdown-item">
+            <%= button_to 'Remove',
+                          workspace_board_card_path(@workspace, card.board, card),
+                          method: :delete,
+                          class: 'dropdown-item' %>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="card-body">
+      <h4 class="title"><%= card.title %></h4>
+    </div>
+  </div>
+</li>

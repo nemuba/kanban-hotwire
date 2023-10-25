@@ -1,4 +1,4 @@
-<div class="card" id="<%= dom_id(board) %>" style="width: 18rem;">
+<div class="card" id="<%= dom_id(board) %>" style="width: 300px; min-height: 300px">
   <div class="card-header d-flex justify-content-between">
     <h3 class="card-title"><%= board.title %></h3>
     <div class="dropdown">
@@ -30,13 +30,7 @@
       id="<%= "workspace_#{@workspace.id}_board_#{board.id}_cards" %>"
     >
       <% if board.cards.count.zero? %>
-        <li
-          class="list-group-item"
-          id="board_<%= board.id %>_no_cards"
-          class="text-center"
-        >
-          No cards yet.
-        </li>
+        <%= render partial: 'cards/no_cards', locals: { board_id: board.id} %>
       <% end %>
 
       <%= render board.cards %>

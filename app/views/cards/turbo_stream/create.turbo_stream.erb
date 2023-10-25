@@ -1,0 +1,5 @@
+<%= turbo_stream.append("workspace_#{@workspace.id}_board_#{@board.id}_cards",
+                         partial: "cards/card",
+                         locals: { card: @card }) %>
+
+<%= turbo_stream.remove("board_#{@board.id}_no_cards") %>
