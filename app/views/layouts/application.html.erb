@@ -11,6 +11,13 @@
   </head>
 
   <body>
-    <%= yield %>
+    <header>
+      <%= render 'shared/navbar' %>
+    </header>
+
+    <main>
+      <%= turbo_frame_tag :remote_modal %>
+      <%= yield %>
+    </main>
   </body>
 </html>
