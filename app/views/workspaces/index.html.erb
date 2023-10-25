@@ -1,0 +1,18 @@
+<section class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="d-flex justify-content-between align-items-center p-3">
+        <h1>Workspaces</h1>
+        <%= link_to 'New Workspace',
+                    new_workspace_path,
+                    data: { turbo_frame: 'remote_modal' },
+                    class: 'btn btn-primary' %>
+      </div>
+    </div>
+
+    <div class="col-md-12 d-flex gap-3 p-3" id="workspaces">
+      <%= render @workspaces %>
+    </div>
+  </div>
+</section>
+

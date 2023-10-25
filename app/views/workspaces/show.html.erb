@@ -1,0 +1,21 @@
+<div class="container-fluid">
+  <div class="d-flex justify-content-between p-3 align-items-center">
+    <div>
+      <%= link_to 'Workspaces', workspaces_path %> / <%= @workspace.title %>
+    </div>
+    <%= link_to 'New Board',
+                new_workspace_board_path(@workspace),
+                data: { turbo_frame: 'remote_modal' },
+                class: 'btn btn-primary' %>
+  </div>
+
+  <div class="row">
+    <div
+      data-controller="drag"
+      class="col-md-12 d-flex gap-3"
+      id="<%= "workspace_#{@workspace.id}_boards" %>"
+    >
+        <%= render @workspace.boards %>
+    </div>
+  </div>
+</div>
