@@ -1,0 +1,51 @@
+<div class="card" id="<%= dom_id(board) %>" style="width: 18rem;">
+  <div class="card-header d-flex justify-content-between">
+    <h3 class="card-title"><%= board.title %></h3>
+    <div class="dropdown">
+      <button class="btn btn-sm btn-default dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+        <i class="bi bi-three-dots"></i>
+      </button>
+      <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton1">
+        <li>
+          <%= link_to 'Edit',
+                      edit_workspace_board_path(@workspace, board),
+                      class: 'dropdown-item',
+                      data: { turbo_frame: 'remote_modal' } %>
+        </li>
+        <li>
+          <%= button_to 'Remove',
+                        workspace_board_path(@workspace, board),
+                        method: :delete,
+                        class: 'dropdown-item' %>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="card-body p-0">
+    <ul
+      class="list-group"
+      data-action="dragover->drag#ulOver dragleave->drag#ulLeave dragend->drag#ulEnd"
+      data-workspace-id="<%= @workspace.id %>"
+      data-board-id="<%= board.id %>"
+      id="<%= "workspace_#{@workspace.id}_board_#{board.id}_cards" %>"
+    >
+      <% if board.cards.count.zero? %>
+        <li
+          class="list-group-item"
+          id="board_<%= board.id %>_no_cards"
+          class="text-center"
+        >
+          No cards yet.
+        </li>
+      <% end %>
+
+      <%= render board.cards %>
+    </ul>
+  </div>
+  <div class="card-footer">
+    <%= link_to 'Add Card',
+                 new_workspace_board_card_path(@workspace, board),
+                 class: 'btn btn-sm btn-primary',
+                 data: { turbo_frame: 'remote_modal' } %>
+  </div>
+</div>

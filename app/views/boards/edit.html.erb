@@ -1,0 +1,5 @@
+<%= turbo_frame_tag :remote_modal do %>
+  <%= render 'shared/modal', title: 'Edit Board' do %>
+    <%= render 'form', workspace: @workspace, board: @board %>
+  <% end %>
+<% end %>

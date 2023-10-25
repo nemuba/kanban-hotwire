@@ -1,0 +1,23 @@
+<%= form_with(model: [workspace, board]) do |form| %>
+<div class="form-group">
+    <% if board.errors.any? %>
+      <ul class="list-group">
+        <% board.errors.full_messages.each do |message| %>
+          <li class="list-group-item"><%= message %></li>
+        <% end %>
+      </ul>
+    <% end %>
+  </div>
+
+  <%= form.hidden_field :workspace_id %>
+
+  <div class="form-group">
+    <%= form.label :title %>
+    <%= form.text_field :title, class: 'form-control' %>
+  </div>
+
+  <div class="d-flex justify-content-between mt-5">
+    <%= form.submit nil, class: 'btn btn-sm btn-primary' %>
+    <%= link_to 'Cancel', '#', data: { action: 'modal#hideBeforeRender'}, class: 'btn btn-sm btn-danger' %>
+  </div>
+<% end %>
