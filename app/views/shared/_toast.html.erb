@@ -1,0 +1,10 @@
+<div data-controller="toast" data-bs-delay="4000" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true">
+  <div class="toast-header bg-success <%= toast_class %>">
+    <i class="bi bi-bell"></i>
+    <strong class="me-auto m-2"><%= title %></strong>
+    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+  </div>
+  <div class="toast-body">
+    <%= yield %>
+  </div>
+</div>

@@ -1,4 +1,4 @@
-<div class="card" id="<%= dom_id(board) %>" style="width: 300px; min-height: 300px">
+<div class="card balance" id="<%= dom_id(board) %>" style="width: 300px; min-height: 300px">
   <div class="card-header d-flex justify-content-between">
     <h3 class="card-title"><%= board.title %></h3>
     <div class="dropdown">
@@ -16,6 +16,7 @@
           <%= button_to 'Remove',
                         workspace_board_path(@workspace, board),
                         method: :delete,
+                        data: { turbo_confirm: 'Are you sure?' },
                         class: 'dropdown-item' %>
         </li>
       </ul>

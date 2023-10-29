@@ -52,6 +52,7 @@ class WorkspacesController < ApplicationController
   # DELETE /workspaces/1 or /workspaces/1.json
   def destroy
     @workspace.destroy
+    @workspaces_count = Workspace.count
     respond_to do |format|
       format.turbo_stream { render 'workspaces/turbo_stream/destroy' }
       format.html { redirect_to workspaces_url, notice: 'Workspace was successfully destroyed.' }

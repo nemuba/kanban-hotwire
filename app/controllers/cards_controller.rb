@@ -50,6 +50,7 @@ class CardsController < ApplicationController
   # DELETE /cards/1
   def destroy
     @card.destroy
+    @cards_count = @board.cards.count
 
     respond_to do |format|
       format.turbo_stream { render 'cards/turbo_stream/destroy' }

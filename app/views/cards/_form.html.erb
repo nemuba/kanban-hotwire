@@ -3,7 +3,7 @@
     <% if card.errors.any? %>
       <ul class="list-group">
         <% card.errors.full_messages.each do |message| %>
-          <li class="list-group-item"><%= message %></li>
+          <li class="list-group-item list-group-item-danger"><%= message %></li>
         <% end %>
       </ul>
     <% end %>

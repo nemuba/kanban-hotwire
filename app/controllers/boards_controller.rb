@@ -49,6 +49,7 @@ class BoardsController < ApplicationController
   # DELETE /boards/1
   def destroy
     @board.destroy
+    @boards_count = @workspace.boards.count
 
     respond_to do |format|
       format.turbo_stream { render 'boards/turbo_stream/destroy' }

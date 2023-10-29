@@ -15,7 +15,11 @@
       class="col-md-12 d-flex gap-3"
       id="<%= "workspace_#{@workspace.id}_boards" %>"
     >
+      <% if @workspace.boards.count.zero? %>
+        <%= render partial: 'boards/no_boards', locals: { workspace: @workspace } %>
+      <% else %>
         <%= render @workspace.boards %>
+      <% end %>
     </div>
   </div>
 </div>

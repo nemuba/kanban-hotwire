@@ -1,2 +1,14 @@
 <%= turbo_stream.remove @board %>
 
+
+<% if @boards_count.zero? %>
+  <%= turbo_stream.append("workspace_#{@workspace.id}_boards",
+                          partial: "boards/no_boards",
+                          locals: { workspace: @workspace }) %>
+<% end %>
+
+<%= turbo_stream.append(:toasts) do %>
+  <%= render 'shared/toast', title: 'Board', toast_class: toast_add do %>
+    <p>Excluido com sucesso!</p>
+  <% end %>
+<% end %>

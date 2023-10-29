@@ -11,7 +11,11 @@
     </div>
 
     <div class="col-md-12 d-flex gap-3 p-3" id="workspaces">
-      <%= render @workspaces %>
+      <% if @workspaces.size.zero? %>
+        <%= render partial: 'no_workspaces' %>
+      <% else %>
+        <%= render @workspaces %>
+      <% end %>
     </div>
   </div>
 </section>
