@@ -1,24 +1,35 @@
-# README
+# KANBAN HOTWIRE
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Description
 
-Things you may want to cover:
+This is a simple kanban board application. It is a project for the studies by self-education.
 
-* Ruby version
+## Technologies
 
-* System dependencies
+- Ruby 3.2.0
+- Rails 7.1
+- Bootstrap 5
+- Redis
+- Postgres
 
-* Configuration
 
-* Database creation
+## Installation
 
-* Database initialization
+1. Clone the repository
 
-* How to run the test suite
+```bash
+git clone http://github.com.br/nemuba/kanban-hotwire.git
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+2. Install the dependencies
 
-* Deployment instructions
+```bash
+bundle install
+```
 
-* ...
+3. Run the application
+
+  ```bash
+  bin/dev
+  ```
+
