@@ -4,10 +4,10 @@
       <%= link_to workspace.title, workspace, class: 'title' %>
     </h5>
     <div class="dropdown">
-      <button class="btn btn-sm btn-default dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+      <button class="btn btn-sm btn-default dropdown-toggle" type="button" id="dropdownMenuWorkspace" data-bs-toggle="dropdown" aria-expanded="false">
         <i class="bi bi-three-dots"></i>
       </button>
-      <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton1">
+      <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuWorkspace">
         <li>
           <%= link_to 'Edit',
                       edit_workspace_path(workspace),

@@ -2,10 +2,10 @@
   <div class="card-header d-flex justify-content-between">
     <h3 class="card-title"><%= board.title %></h3>
     <div class="dropdown">
-      <button class="btn btn-sm btn-default dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+      <button class="btn btn-sm btn-default dropdown-toggle" type="button" id="dropdownMenuBoard" data-bs-toggle="dropdown" aria-expanded="false">
         <i class="bi bi-three-dots"></i>
       </button>
-      <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton1">
+      <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuBoard">
         <li>
           <%= link_to 'Edit',
                       edit_workspace_board_path(@workspace, board),
